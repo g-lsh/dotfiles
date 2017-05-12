@@ -1,0 +1,17 @@
+#!/bin/sh
+
+# Need : - zsh
+#        - git
+
+SCRIPTPATH=$(cd $(dirname $0); pwd -P)
+
+# Download antigen
+if [ ! -d $HOME/.antigen ]; then
+  git clone https://github.com/zsh-users/antigen.git $HOME/.antigen
+fi
+# Install .zshrc file
+ln -fs $SCRIPTPATH/zshrc $HOME/.zshrc
+
+# Install .gitconfig file
+ln -fs $SCRIPTPATH/gitconfig $HOME/.gitconfig
+
